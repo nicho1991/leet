@@ -6,7 +6,12 @@
 
   <p>
     <strong>is it leet tho?</strong>
-    <%= appearance.is_leet ? 'YES' : 'NO' %>
+    <span class="<%= appearance.is_leet? ? 'bg-green' : 'bg-red' %>"><%= appearance.is_leet ? 'YES' : 'NO' %></span>
+  </p>
+
+  <p>
+    <strong>Registered at:</strong>
+    <%= appearance.created_at.in_time_zone(appearance.default_timezone).to_formatted_s %>
   </p>
 
 </div>
