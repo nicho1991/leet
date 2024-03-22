@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Appearances</h1>
+
+<div id="appearances">
+  <% @appearances.each do |appearance| %>
+    <%= render appearance %>
+    <p>
+      <%= link_to "Show this appearance", appearance %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New appearance", new_appearance_path %>
