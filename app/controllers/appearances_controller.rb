@@ -4,6 +4,14 @@ class AppearancesController < ApplicationController
   # GET /appearances or /appearances.json
   def index
     @appearances = Appearance.all
+
+    if Time.now.in_time_zone.before_leet?
+      flash[:notice] = "Its before leet..."
+    elsif Time.now.in_time_zone.after_leet?
+      flash[:notice] = "Its after leet..."
+    elsif Time.now.in_time_zone.is_leet?
+      flash[:notice] = "Its is leet!!"
+    end
   end
 
   # GET /appearances/1 or /appearances/1.json

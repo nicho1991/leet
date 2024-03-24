@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Appearances</h1>
-
+<%= link_to "New appearance", new_appearance_path %>
 <div id="appearances">
   <% @appearances.each do |appearance| %>
     <%= render appearance %>
@@ -10,5 +10,3 @@
     </p>
   <% end %>
 </div>
-
-<%= link_to "New appearance", new_appearance_path %>
