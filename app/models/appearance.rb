@@ -9,11 +9,12 @@ class Appearance < ApplicationRecord
 
   private
 
-  def is_leet_checker
+  def appearance_time
     time = created_at || Time.now
-    time = time.in_time_zone(default_timezone)
+    time.in_time_zone(default_timezone)
+  end
 
-    time_formatted = time.to_formatted_s(:time)
-    time_formatted == '13:37'
+  def is_leet_checker
+    appearance_time.is_leet?
   end
 end
